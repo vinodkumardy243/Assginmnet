@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+    <title>Task Execution</title>
+</head>
+<body></body>
+    <h2>Task 1: Reverse Every Word</h2>
+    <input type="text" id="inputSentence" placeholder="Enter a sentence">
+    <button onclick="reverseWords()">Reverse Words</button>
+    <p id="reversedWords"></p>
+
+    <h2>Task 2: Sort Array in Descending Order</h2>
+    <input type="text" id="inputArray" placeholder="Enter an array (e.g., 4, 2, 6, 1)">
+    <button onclick="sortDescending()">Sort Descending</button>
+    <p id="sortedArray"></p>
+
+    <script>
+        function reverseWords() {
+            let sentence = document.getElementById("inputSentence").value;
+            let words = sentence.split(" ");
+            let reversedWords = words.map(word => word.split("").reverse().join(""));
+            document.getElementById("reversedWords").innerHTML = reversedWords.join(" ");
+        }
+
+        function sortDescending() {
+            let inputArray = document.getElementById("inputArray").value;
+            let array = inputArray.split(",").map(item => parseInt(item.trim()));
+            let sortedArray = array.sort((a, b) => b - a);
+            document.getElementById("sortedArray").innerHTML = sortedArray.join(", ");
+        }
+    </script>
+</body>
+</html>
